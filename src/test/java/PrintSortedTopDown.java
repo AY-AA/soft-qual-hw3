@@ -14,11 +14,11 @@ public class PrintSortedTopDown {
     private static final int[] ARR_SORTED = {-123, -2, -1, 0, 21321321};
     private static final String EXPECTED_EMPTY_ARR = "\r\n";
     private static final String EXPECTED_NULL = "No array\r\n";
-    private static final String EXPECTED_ARR = "-1 -123 -2 21321321 0 \n" +
-            "-123 -2 -1 0 21321321 \n" +
+    private static final String EXPECTED_ARR = "-1 -123 -2 21321321 0 \r\n" +
+            "-123 -2 -1 0 21321321 \r\n" +
             "-123 -2 -1 0 21321321 \r\n";
-    private static final String EXPECTED_ARR_R1 = "-1 -123 -2 21321321 0 ";
-    private static final String EXPECTED_ARR_R2 = "-123 -2 -1 0 21321321 ";
+    private static final String EXPECTED_ARR_R1 = "-1 -123 -2 21321321 0 \r";
+    private static final String EXPECTED_ARR_R2 = "-123 -2 -1 0 21321321 \r";
     private static final String EXPECTED_ARR_R3 = "-123 -2 -1 0 21321321 \r";
 
 
