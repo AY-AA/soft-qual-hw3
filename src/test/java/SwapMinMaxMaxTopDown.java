@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SwapMinMaxMaxValueTopDown {
+public class SwapMinMaxMaxTopDown {
     private static final int MIN_VALUE_IDX = 4;
     private static final int MAX_VALUE_IDX = 3;
     private static final int MIN_VALUE_IDX_NEG = 4;
@@ -20,7 +20,7 @@ public class SwapMinMaxMaxValueTopDown {
 
     @Before
     public void beforeTests() {
-        testProgram = new MinIdxMaxCopyArrStub();
+        testProgram = new Program();
     }
 
     @Test
@@ -37,25 +37,5 @@ public class SwapMinMaxMaxValueTopDown {
         int[] testRes = testProgram.swapMinMax(ARR_WITH_NEG_VALS);
         Assert.assertEquals(MIN_WITH_NEG, testRes[MAX_VALUE_IDX_NEG]);
         Assert.assertEquals(MAX_WITH_NEG, testRes[MIN_VALUE_IDX_NEG]);
-    }
-
-
-    class MinIdxMaxCopyArrStub extends Program {
-
-        public int minValueIndex(int[] arr) {
-            if(negNumFlag)
-                return MIN_VALUE_IDX_NEG;
-            return MIN_VALUE_IDX;
-        }
-
-        public int maxValueIndex(int[] arr) {
-            return 3;
-        }
-
-        public int[] copyArr(int[] arr) {
-            if(negNumFlag)
-                return ARR_WITH_NEG_VALS_COPY;
-            return ARR1_COPY;
-        }
     }
 }

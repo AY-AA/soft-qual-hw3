@@ -1,10 +1,11 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.Arrays;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class IsSortedTopDown {
+public class IsSortedEqualArrSortArrayStubsTopDown {
 
     //private static final int[] NULL_ARR = null;
     Program testProgram;
@@ -19,7 +20,7 @@ public class IsSortedTopDown {
 
     @Before
     public void beforeTests() {
-        testProgram = new Program();
+        testProgram = new SortArrayEqualArraysStub();
     }
 
     @Test
@@ -32,5 +33,21 @@ public class IsSortedTopDown {
         assertFalse(testProgram.isSorted(NOT_SORTED_ARRAY_3));
         assertFalse(testProgram.isSorted(NOT_SORTED_ARRAY_4));
         assertFalse(testProgram.isSorted(NOT_SORTED_ARRAY_5));
+    }
+
+
+    class SortArrayEqualArraysStub extends Program {
+        @Override
+        public int[] sortArray(int[] arr) {
+            int[] arr1 = new int[arr.length];
+            System.arraycopy(arr, 0, arr1, 0, arr.length);
+            Arrays.sort(arr1);
+            return arr1;
+        }
+
+        @Override
+        public boolean equalArrays(int[] arr1, int[] arr2) {
+            return Arrays.equals(arr1, arr2);
+        }
     }
 }

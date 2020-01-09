@@ -2,7 +2,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SwapMinMaxMaxValueMinValueIndexCopyArrTopDown {
+public class SwapMinMaxCopyArrMinValueIndexStubsTopDown {
+
     private static final int MIN_VALUE_IDX = 4;
     private static final int MAX_VALUE_IDX = 3;
     private static final int MIN_VALUE_IDX_NEG = 4;
@@ -20,7 +21,7 @@ public class SwapMinMaxMaxValueMinValueIndexCopyArrTopDown {
 
     @Before
     public void beforeTests() {
-        testProgram = new MinIdxMaxCopyArrStub();
+        testProgram = new MinIdxCopyArrStub();
     }
 
     @Test
@@ -40,14 +41,19 @@ public class SwapMinMaxMaxValueMinValueIndexCopyArrTopDown {
     }
 
 
-    class MinIdxMaxCopyArrStub extends Program {
+    class MinIdxCopyArrStub extends Program {
 
-        public int maxValueIndex(int[] arr) {
-            return 3;
+        public int minValueIndex(int[] arr) {
+            if(negNumFlag)
+                return MIN_VALUE_IDX_NEG;
+            return MIN_VALUE_IDX;
         }
 
-        public int size(int[] arr) {
-            return 10;
+
+        public int[] copyArr(int[] arr) {
+            if(negNumFlag)
+                return ARR_WITH_NEG_VALS_COPY;
+            return ARR1_COPY;
         }
     }
 }
