@@ -9,10 +9,10 @@ public class MinValueBottomUp {
     private static final int[] ARR3 = {-1, -123, -2, 21321321, -99999};
     private static final int[] EMPTY_ARR = {};
 
-    @Test (expected = NullPointerException.class)
+    @Test
     public void minValueTest_null() {
         int[] arr1 = null;
-        Program.minValue(arr1);
+        assertEquals(-1,Program.minValue(arr1));
     }
 
     @Test
@@ -27,9 +27,9 @@ public class MinValueBottomUp {
         assertEquals(minVal, Program.minValue(ARR3));
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void minValueTest_empty() {
-        Program.minValue(EMPTY_ARR);
+        assertEquals(-1, Program.minValue(EMPTY_ARR));
     }
 
 }

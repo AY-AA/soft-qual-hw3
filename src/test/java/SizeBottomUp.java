@@ -22,10 +22,12 @@ public class SizeBottomUp {
         Assert.assertEquals(size, Program.size(arrayToTest));
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test
     public void nullArraySizeTest() {
         int[] arrayToTest = null;
-        Program.size(arrayToTest);
+        int expected = -1;
+        int size = Program.size(arrayToTest);
+        Assert.assertEquals(expected, size);
     }
 
 }

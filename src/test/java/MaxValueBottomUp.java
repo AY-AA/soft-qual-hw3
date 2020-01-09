@@ -9,10 +9,10 @@ public class MaxValueBottomUp {
     private static final int[] ARR3 = {-1, -123, -2, 21321321, -99999};
     private static final int[] EMPTY_ARR = {};
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void maxValueTest_null() {
         int[] arr1 = null;
-        Program.maxValue(arr1);
+        assertEquals(-1, Program.maxValue(arr1));
     }
 
     @Test
@@ -27,9 +27,9 @@ public class MaxValueBottomUp {
         assertEquals(maxVal, Program.maxValue(ARR3));
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void maxValueTest_empty() {
-        Program.maxValue(EMPTY_ARR);
+        assertEquals(-1, Program.maxValue(EMPTY_ARR));
     }
 
 }

@@ -8,14 +8,14 @@ public class EqualArraysBottomUp {
     private static final int[] ARR1 = {1, 2, 3, 4, 5, 6};
     private static final int[] ARR2 = {-1, -123, -2, 21321321, 0};
     private static final int[] ARR3 = {-1, -123, -2, 21321321, -99999};
-    private static final int[] ARR4= {1, -2, 3, 4, 5, 6};
-    private static final int[] ARR5= {1, 2, 3, 4, 5, 0};
-    private static final int[] ARR6= {-1, 2, 3, 4, 5, -6};
+    private static final int[] ARR4 = {1, -2, 3, 4, 5, 6};
+    private static final int[] ARR5 = {1, 2, 3, 4, 5, 0};
+    private static final int[] ARR6 = {-1, 2, 3, 4, 5, -6};
     private static final int[] EMPTY_ARR = {};
 
-    private static final int[] ARR1_COPPIED = {1, 2, 3, 4, 5, 6};
-    private static final int[] ARR2_COPPIED = {-1, -123, -2, 21321321, 0};
-    private static final int[] ARR3_COPPIED = {-1, -123, -2, 21321321, -99999};
+    private static final int[] ARR1_COPIED = {1, 2, 3, 4, 5, 6};
+    private static final int[] ARR2_COPIED = {-1, -123, -2, 21321321, 0};
+    private static final int[] ARR3_COPIED = {-1, -123, -2, 21321321, -99999};
 
 
     @Test
@@ -42,9 +42,9 @@ public class EqualArraysBottomUp {
 
     @Test
     public void equalArraysTest() {
-        assertTrue(Program.equalArrays(ARR1, ARR1_COPPIED));
-        assertTrue(Program.equalArrays(ARR2, ARR2_COPPIED));
-        assertTrue(Program.equalArrays(ARR3, ARR3_COPPIED));
+        assertTrue(Program.equalArrays(ARR1, ARR1_COPIED));
+        assertTrue(Program.equalArrays(ARR2, ARR2_COPIED));
+        assertTrue(Program.equalArrays(ARR3, ARR3_COPIED));
         assertFalse(Program.equalArrays(ARR1, ARR4));
         assertFalse(Program.equalArrays(ARR1, ARR5));
         assertFalse(Program.equalArrays(ARR1, ARR6));

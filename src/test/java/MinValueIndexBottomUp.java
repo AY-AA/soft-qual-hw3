@@ -27,7 +27,7 @@ public class MinValueIndexBottomUp {
         assertEquals(-1, Program.minValueIndex(nullArray));
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void minValueTestIndex_empty() {
         int expected = -1;
         assertEquals(expected, Program.minValueIndex(EMPTY_ARR));

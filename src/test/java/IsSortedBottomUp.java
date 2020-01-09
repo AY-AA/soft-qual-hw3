@@ -31,12 +31,12 @@ public class IsSortedBottomUp {
 
     @Test
     public void isSortedTest_empty() {
-        Program.isSorted(EMPTY_ARR);
+        assertTrue(Program.isSorted(EMPTY_ARR));
     }
 
     @Test
     public void isSortedTest_null() {
         int[] arr = null;
-        Program.isSorted(arr);
+        assertTrue(Program.isSorted(arr));
     }
 }

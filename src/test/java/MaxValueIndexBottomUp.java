@@ -24,11 +24,10 @@ public class MaxValueIndexBottomUp {
         assertEquals(minValueIndex, Program.maxValueIndex(ARR3));
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test
     public void maxValueIndexTest_null() {
         int[] nullArray = null;
-        Program.maxValueIndex(nullArray);
-
+        assertEquals(-1, Program.maxValueIndex(nullArray));
     }
 
     @Test

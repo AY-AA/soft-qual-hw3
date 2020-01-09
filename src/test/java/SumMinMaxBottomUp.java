@@ -35,8 +35,8 @@ public class SumMinMaxBottomUp {
         assertEquals(expectedResult, Program.sumMinMax(ARR3));
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void testSumMinMax_empty() {
-        Program.sumMinMax(EMPTY_ARR);
+        assertEquals(0, Program.sumMinMax(EMPTY_ARR));
     }
 }

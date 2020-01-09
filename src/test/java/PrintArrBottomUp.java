@@ -42,12 +42,12 @@ public class PrintArrBottomUp {
     }
 
     @Test
-    public void printArr_empty() {  //TODO: verify on Windows
+    public void printArr_empty() {
         Program.printArr(EMPTY_ARR);
         assertEquals(EXPECTED_EMPTY_ARR, outContent.toString());
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test
     public void printArrNullTest() {
         Program.printArr(null);
     }
