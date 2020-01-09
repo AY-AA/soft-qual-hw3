@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -16,27 +17,32 @@ public class SumMinMaxBottomUp {
     private static final int[] ARR3 = {-1, -123, -2, MAX3, MIN3};
 
     private static final int[] EMPTY_ARR = {};
+    private Program program;
 
+    @Before
+    public void setUp(){
+        program = new Program();
+    }
     @Test (expected = NullPointerException.class)
     public void testSumMinMax_null() {
         int[] arr = null;
-        Program.sumMinMax(arr);
+        program.sumMinMax(arr);
     }
 
     @Test
     public void testSumMinMax() {
         int expectedResult = MIN1 + MAX1;
-        assertEquals(expectedResult, Program.sumMinMax(ARR1));
+        assertEquals(expectedResult, program.sumMinMax(ARR1));
 
         expectedResult = MIN2 + MAX2;
-        assertEquals(expectedResult, Program.sumMinMax(ARR2));
+        assertEquals(expectedResult, program.sumMinMax(ARR2));
 
         expectedResult = MIN3 + MAX3;
-        assertEquals(expectedResult, Program.sumMinMax(ARR3));
+        assertEquals(expectedResult, program.sumMinMax(ARR3));
     }
 
     @Test
     public void testSumMinMax_empty() {
-        assertEquals(0, Program.sumMinMax(EMPTY_ARR));
+        assertEquals(0, program.sumMinMax(EMPTY_ARR));
     }
 }

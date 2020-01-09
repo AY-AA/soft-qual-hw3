@@ -18,9 +18,11 @@ public class PrintArrBottomUp {
     private static final String EXPECTED_ARR1 = "1 2 3 4 5 6 \r\n";
     private static final String EXPECTED_ARR2 = "-1 -123 -2 21321321 0 \r\n";
     private static final String EXPECTED_EMPTY_ARR = "\r\n";
+    private Program program;
 
     @Before
-    public void setUp() {
+    public void setUp(){
+        program = new Program();
         System.setOut(new PrintStream(outContent));
     }
 
@@ -31,25 +33,25 @@ public class PrintArrBottomUp {
 
     @Test
     public void printArrTest1() {
-        Program.printArr(ARR1);
+        program.printArr(ARR1);
         assertEquals(EXPECTED_ARR1, outContent.toString());
     }
 
     @Test
     public void printArrTest2() {
-        Program.printArr(ARR2);
+        program.printArr(ARR2);
         assertEquals(EXPECTED_ARR2, outContent.toString());
     }
 
     @Test
     public void printArr_empty() {
-        Program.printArr(EMPTY_ARR);
+        program.printArr(EMPTY_ARR);
         assertEquals(EXPECTED_EMPTY_ARR, outContent.toString());
     }
 
     @Test
     public void printArrNullTest() {
-        Program.printArr(null);
+        program.printArr(null);
     }
 
 }

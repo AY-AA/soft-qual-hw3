@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.EnumMap;
@@ -10,29 +11,34 @@ public class MaxValueIndexBottomUp {
     private static final int[] ARR2 = {-1, -123, -2, 21321321, 0};
     private static final int[] ARR3 = {-1, -123, -2, 21321321, -99999};
     private static final int[] EMPTY_ARR = {};
+    private Program program;
 
+    @Before
+    public void setUp(){
+        program = new Program();
+    }
 
     @Test
     public void maxValueIndexTest() {
         int minValueIndex = 5;
-        assertEquals(minValueIndex, Program.maxValueIndex(ARR1));
+        assertEquals(minValueIndex, program.maxValueIndex(ARR1));
 
         minValueIndex = 3;
-        assertEquals(minValueIndex, Program.maxValueIndex(ARR2));
+        assertEquals(minValueIndex, program.maxValueIndex(ARR2));
 
         minValueIndex = 3;
-        assertEquals(minValueIndex, Program.maxValueIndex(ARR3));
+        assertEquals(minValueIndex, program.maxValueIndex(ARR3));
     }
 
     @Test
     public void maxValueIndexTest_null() {
         int[] nullArray = null;
-        assertEquals(-1, Program.maxValueIndex(nullArray));
+        assertEquals(-1, program.maxValueIndex(nullArray));
     }
 
     @Test
     public void maxValueIndexTest_empty() {
         int expected = -1;
-        assertEquals(expected, Program.maxValueIndex(EMPTY_ARR));
+        assertEquals(expected, program.maxValueIndex(EMPTY_ARR));
     }
 }

@@ -19,9 +19,11 @@ public class PrintSortedBottomUp {
     private static final String EXPECTED_ARR2 = "-1 -123 -2 21321321 0 \r\n" +
                                                 "-123 -2 -1 0 21321321 \r\n" +
                                                 "-123 -2 -1 0 21321321 \r\n";
+    private Program program;
 
     @Before
-    public void setUp() {
+    public void setUp(){
+        program = new Program();
         System.setOut(new PrintStream(outContent));
     }
 
@@ -33,26 +35,26 @@ public class PrintSortedBottomUp {
     @Test
     public void printSortedTest_null() {
         int[] arr = null;
-        Program.printSorted(arr);
+        program.printSorted(arr);
         assertEquals(EXPECTED_NULL, outContent.toString());
     }
 
     @Test
     public void printSortedTest_empty() {
         int[] arr = {};
-        Program.printSorted(arr);
+        program.printSorted(arr);
         assertEquals(EXPECTED_EMPTY_ARR, outContent.toString());
     }
 
     @Test
     public void printSortedTest1() {
-        Program.printSorted(ARR1);
+        program.printSorted(ARR1);
         assertEquals(EXPECTED_ARR1, outContent.toString());
     }
 
     @Test
     public void printSortedTest2() {
-        Program.printSorted(ARR2);
+        program.printSorted(ARR2);
         assertEquals(EXPECTED_ARR2, outContent.toString());
     }
 

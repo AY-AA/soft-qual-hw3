@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -16,27 +17,34 @@ public class IsSortedBottomUp {
 
     private static final int[] EMPTY_ARR = {};
 
+    private Program program;
+
+    @Before
+    public void setUp(){
+        program = new Program();
+    }
+
 
     @Test
     public void isSortedTest() {
-        assertTrue(Program.isSorted(SORTED_ARRAY_1));
-        assertTrue(Program.isSorted(SORTED_ARRAY_2));
+        assertTrue(program.isSorted(SORTED_ARRAY_1));
+        assertTrue(program.isSorted(SORTED_ARRAY_2));
 
-        assertFalse(Program.isSorted(NOT_SORTED_ARRAY_1));
-        assertFalse(Program.isSorted(NOT_SORTED_ARRAY_2));
-        assertFalse(Program.isSorted(NOT_SORTED_ARRAY_3));
-        assertFalse(Program.isSorted(NOT_SORTED_ARRAY_4));
-        assertFalse(Program.isSorted(NOT_SORTED_ARRAY_5));
+        assertFalse(program.isSorted(NOT_SORTED_ARRAY_1));
+        assertFalse(program.isSorted(NOT_SORTED_ARRAY_2));
+        assertFalse(program.isSorted(NOT_SORTED_ARRAY_3));
+        assertFalse(program.isSorted(NOT_SORTED_ARRAY_4));
+        assertFalse(program.isSorted(NOT_SORTED_ARRAY_5));
     }
 
     @Test
     public void isSortedTest_empty() {
-        assertTrue(Program.isSorted(EMPTY_ARR));
+        assertTrue(program.isSorted(EMPTY_ARR));
     }
 
     @Test
     public void isSortedTest_null() {
         int[] arr = null;
-        assertTrue(Program.isSorted(arr));
+        assertTrue(program.isSorted(arr));
     }
 }
