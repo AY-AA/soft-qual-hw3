@@ -150,5 +150,6 @@ public class ProgramFixed {
     public static void main(String[] args){
 //		printSorted(new int[]{1, 2, 3, 4, 5, 6});
         printSorted(new int[]{-1, -123, -2, 21321321, 0});
+//        printSorted(new int[]{});
     }
 }

@@ -1,7 +1,7 @@
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class SwapMinMaxBottomUp {
     private static final int MIN1 = 1;
@@ -23,28 +23,36 @@ public class SwapMinMaxBottomUp {
     private static final int[] EMPTY_ARR = {};
     private static final int[] EXPECTED_EMPTY_ARR = {};
 
+    private Program program;
 
+    @Before
+    public void setUp(){
+        program = new Program();
+    }
     @Test
     public void swapMinMaxTest() {
-        int[] swappedArr = Program.swapMinMax(ARR1);
+        int[] swappedArr = program.swapMinMax(ARR1);
         assertArrayEquals(EXPECTED_ARR1, swappedArr);
+        assertNotEquals(EXPECTED_ARR1, swappedArr);
 
-        swappedArr = Program.swapMinMax(ARR2);
+        swappedArr = program.swapMinMax(ARR2);
         assertArrayEquals(EXPECTED_ARR2, swappedArr);
+        assertNotEquals(EXPECTED_ARR2, swappedArr);
 
-        swappedArr = Program.swapMinMax(ARR3);
+        swappedArr = program.swapMinMax(ARR3);
         assertArrayEquals(EXPECTED_ARR3, swappedArr);
+        assertNotEquals(EXPECTED_ARR3, swappedArr);
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test
     public void swapMinMaxTest_null() {
         int[] swappedArr = null;
-        assertNull(Program.swapMinMax(swappedArr));
+        assertNull(program.swapMinMax(swappedArr));
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void swapMinMaxTest_empty() {
-        int[] swappedArr = Program.swapMinMax(EMPTY_ARR);
+        int[] swappedArr = program.swapMinMax(EMPTY_ARR);
         assertArrayEquals(EXPECTED_EMPTY_ARR, swappedArr);
     }
 }

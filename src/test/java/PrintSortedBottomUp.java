@@ -14,16 +14,16 @@ public class PrintSortedBottomUp {
     private static final int[] ARR1 = {1, 2, 3, 4, 5, 6};
     private static final int[] ARR2 = {-1, -123, -2, 21321321, 0};
     private static final String EXPECTED_NULL = "No array\r\n";
-    private static final String EXPECTED_EMPTY_ARR = "\r\n";
-    private static final String EXPECTED_ARR1 = "1 2 3 4 5 6 \n" +
-                                                "1 2 3 4 5 6 \n" +
-                                                "1 2 3 4 5 6  \r\n";
-    private static final String EXPECTED_ARR2 = "-1 -123 -2 21321321 0 \n" +
-                                                "-123 -2 -1 0 21321321 \n" +
+    private static final String EXPECTED_EMPTY_ARR = "\r\n\r\n\r\n";
+    private static final String EXPECTED_ARR1 = "1 2 3 4 5 6 \r\n1 2 3 4 5 6 \r\n1 2 3 4 5 6 \r\n";
+    private static final String EXPECTED_ARR2 = "-1 -123 -2 21321321 0 \r\n" +
+                                                "-123 -2 -1 0 21321321 \r\n" +
                                                 "-123 -2 -1 0 21321321 \r\n";
+    private Program program;
 
     @Before
-    public void setUp() {
+    public void setUp(){
+        program = new Program();
         System.setOut(new PrintStream(outContent));
     }
 
@@ -32,29 +32,29 @@ public class PrintSortedBottomUp {
         System.setOut(originalOut);
     }
 
-    @Test (expected = NullPointerException.class)
-    public void printSortedTest_null() { //TODO: test in Windows
+    @Test
+    public void printSortedTest_null() {
         int[] arr = null;
-        Program.printSorted(arr);
+        program.printSorted(arr);
         assertEquals(EXPECTED_NULL, outContent.toString());
     }
 
     @Test
-    public void printSortedTest_empty() { //TODO: test in Windows
+    public void printSortedTest_empty() {
         int[] arr = {};
-        Program.printSorted(arr);
+        program.printSorted(arr);
         assertEquals(EXPECTED_EMPTY_ARR, outContent.toString());
     }
 
     @Test
-    public void printSortedTest1() { //TODO: test in Windows
-        Program.printSorted(ARR1);
+    public void printSortedTest1() {
+        program.printSorted(ARR1);
         assertEquals(EXPECTED_ARR1, outContent.toString());
     }
 
     @Test
-    public void printSortedTest2() { //TODO: test in Windows
-        Program.printSorted(ARR2);
+    public void printSortedTest2() {
+        program.printSorted(ARR2);
         assertEquals(EXPECTED_ARR2, outContent.toString());
     }
 
